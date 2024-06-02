@@ -52,6 +52,41 @@ classDiagram
     iPhone --> AparelhoTelefonico
     iPhone --> NavegadorInternet
 ```
+```mermaid
+abstract class Aparelho {
+  + ligar()
+  + atender()
+}
+
+class ReprodutorMusical extends Aparelho {
+  + tocar()
+  + pausar()
+  + selecionarMusica(String musica)
+}
+
+class AparelhoTelefonico extends Aparelho {
+  + iniciarCorreioVoz()
+}
+
+class NavegadorInternet extends Aparelho {
+  + exibirPagina(String url)
+  + adicionarNovaAba()
+  + atualizarPagina()
+}
+
+class iPhone extends ReprodutorMusical, AparelhoTelefonico, NavegadorInternet {
+  + iPhone()
+}
+
+Aparelho <|.. ReprodutorMusical
+Aparelho <|.. AparelhoTelefonico
+Aparelho <|.. NavegadorInternet
+
+ReprodutorMusical --|> iPhone
+AparelhoTelefonico --|> iPhone
+NavegadorInternet --|> iPhone
+
+```
 
 ### Instruções
 1. Assista ao vídeo do lançamento do iPhone para entender as funcionalidades principais.
