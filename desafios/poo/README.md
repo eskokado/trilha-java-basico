@@ -31,18 +31,21 @@ Com base no vídeo de lançamento do iPhone de 2007 (link abaixo), você deve el
 ```mermaid
 classDiagram
     class ReprodutorMusical {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+        +tocar()
+        +pausar()
+        +selecionarMusica(String musica)
     }
 
     class AparelhoTelefonico {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+        +ligar()
+        +atender()
+        +iniciarCorreioVoz()
     }
 
     class NavegadorInternet {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+        +exibirPagina(String url)
+        +adicionarNovaAba()
+        +atualizarPagina()
     }
 
     class iPhone {
@@ -51,41 +54,6 @@ classDiagram
     iPhone --> ReprodutorMusical
     iPhone --> AparelhoTelefonico
     iPhone --> NavegadorInternet
-```
-```mermaid
-abstract class Aparelho {
-  + ligar()
-  + atender()
-}
-
-class ReprodutorMusical extends Aparelho {
-  + tocar()
-  + pausar()
-  + selecionarMusica(String musica)
-}
-
-class AparelhoTelefonico extends Aparelho {
-  + iniciarCorreioVoz()
-}
-
-class NavegadorInternet extends Aparelho {
-  + exibirPagina(String url)
-  + adicionarNovaAba()
-  + atualizarPagina()
-}
-
-class iPhone extends ReprodutorMusical, AparelhoTelefonico, NavegadorInternet {
-  + iPhone()
-}
-
-Aparelho <|.. ReprodutorMusical
-Aparelho <|.. AparelhoTelefonico
-Aparelho <|.. NavegadorInternet
-
-ReprodutorMusical --|> iPhone
-AparelhoTelefonico --|> iPhone
-NavegadorInternet --|> iPhone
-
 ```
 
 ### Instruções
