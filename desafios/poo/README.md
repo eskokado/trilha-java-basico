@@ -61,4 +61,5 @@ classDiagram
 
 ```bash
 https://github.com/glysns/trilha-java-basico/desafios/poo/README.md
-```` 
+````
+![Diagrama UML](https://mermaid.live/edit#graph LR\nA[Aparelho] -->|ligar()| B(ReprodutorMusical)\nA -->|atender()| C(AparelhoTelefonico)\nA -->|ligar()| D(NavegadorInternet)\nB -->|tocar()| E(iPhone)\nC -->|atender()| E\nD -->|exibirPagina()| E\nB -->|pausar()| E\nB -->|selecionarMusica()| E\nC -->|iniciarCorreioVoz()| E\nD -->|adicionarNovaAba()| E\nD -->|atualizarPagina()| E)
